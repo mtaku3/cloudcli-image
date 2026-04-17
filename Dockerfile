@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN npm install -g @cloudcli-ai/cloudcli @anthropic-ai/claude-code
 
-RUN usermod -l cloudcli -d /home/cloudcli -m node && groupmod -n cloudcli node
+RUN usermod -l cloudcli -d /home/cloudcli -m --shell /bin/bash node && groupmod -n cloudcli node
 
 WORKDIR /home/cloudcli
 
